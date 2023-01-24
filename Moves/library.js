@@ -37,19 +37,20 @@ setInterval(() => {
         const obj = document.getElementById('line');
 
         if (!voltaLine){
-            obj.style.marginLeft =  marPosLine+"px";
-            obj.innerHTML = marPosLine;
             marPosLine ++;
         }else{
-            obj.style.marginLeft =  marPosLine+"px";
-            obj.innerHTML = marPosLine;
-            marPosLine --;
+            marPosLine--;
         }
 
+        obj.style.marginLeft =  marPosLine+"px";
+        obj.innerHTML = marPosLine;
+
+        //if bigger then i want go to the left
         if (marPosLine > 400){
             voltaLine = true;
         }
 
+        //if smaller than i want go to the right
         if (marPosLine < 0){
             voltaLine = false;
         }
@@ -71,11 +72,12 @@ setInterval(() => {
         obj.style.transform = `translate(${x}, ${y})`;
         obj.innerHTML = 'X:'+Math.round(parseInt(x))+' Y:'+Math.round(parseInt(y));
     
+        //condition to return
         if( Control > 635){
             voltaCircle = !voltaCircle;
             Control = 0;
         }
-
+        //circle rotor control
         Control ++;
     }
 }, 10);
