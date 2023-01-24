@@ -11,25 +11,13 @@ let angle = 0;
 var ExecSquare = false;
 
 
-function startLine(vlr){
-    ExecLine = vlr;
-    return(ExecLine);
-}
+function startLine(vlr){ExecLine = vlr}
 
-function stopLine(vlr) {
-    ExecLine = vlr;
-    return(ExecLine);
-}
+function stopLine(vlr) {ExecLine = vlr}
 
-function startCircle(vlr){
-    ExecCircle = vlr;
-    return(ExecLine);
-}
+function startCircle(vlr){ExecCircle = vlr}
 
-function stopCircle(vlr) {
-    ExecCircle = vlr;
-    return(ExecLine);
-}
+function stopCircle(vlr) {ExecCircle = vlr}
 
 setInterval(() => {
     //perform moviment block in a line
