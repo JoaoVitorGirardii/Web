@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Moves</title>
+</head>
+<body>
+    <section>
+        <button class="buttonStyle" onclick="startLine(true)">Start in line</button>
+        <button class="buttonStyle" onclick="stopLine(false)">Stop in line</button>
+    </section>
+    <section class="secline">
+        <div class="line" id="line">0</div>
+    </section>
+    
+    <hr>
+
+    <section>
+        <button class="buttonStyle" onclick="startCircle(true)">Start in circle</button>
+        <button class="buttonStyle" onclick="stopCircle(false)">Stop in circle</button>
+    </section>
+    <section class="secCircle">
+        <div class="circleInternal"></div>
+        <div class="circle" id="circle">X:0 Y:0</div>
+    </section>
+
+    <hr>
+
+
+    <script src="library.js"></script>
+</body>
+</html>

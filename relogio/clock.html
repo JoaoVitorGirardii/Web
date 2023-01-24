@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Clock</title>
+</head>
+<body>
+    <div class="moldura">
+        <table style="margin: auto;">
+            <td>
+                <div class="borderNumber">
+                    <span id="hoursLeft"></span>
+                </div>
+            </td>
+            <td>
+                <div class="borderNumber">
+                    <span id="hoursRight"></span>
+                </div>
+            </td>
+             
+            <!-- separete hour and minute -->
+            <td>
+                <div class="borderNumber">
+                    <span class="colon">:</span>
+                </div>
+            </td>
+
+            <td>
+            <div class="borderNumber">
+                    <span id="minuteLeft"></span>
+                </div>
+            </td>
+            <td>
+                <div class="borderNumber">
+                    <span id="minuteRight"></span>
+                </div>
+            </td>
+            
+            <!-- separete minute and second -->
+            <td>
+                <div class="borderNumber">
+                    <span class="colon">:</span>
+                </div>
+            </td>
+            <td>
+                <div class="borderNumber">
+                    <span id="secondLeft"></span> 
+                </div>
+            </td>
+            <td>
+                <div class="borderNumber">
+                    <span id="secondRight"></span>
+                </div>
+            </td>
+        </table>
+       
+        
+        <span id="clock"> </span>
+    </div>
+</body>
+<script src="library.js"></script>
+</html>

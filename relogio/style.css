@@ -1,0 +1,31 @@
+#clock{
+    color: red;
+    font-size: 50px;
+    font-family: fantasy;
+}
+
+.moldura{
+    background-color: grey;
+    text-align: center;
+    border-width: 1px;
+    border: solid;
+    border-radius: 10px;
+}
+
+.borderNumber{
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    font-family: fantasy;
+    margin: auto;
+    display: table;
+}
+
+.colon {
+    color: red;
+    font-size: 40px;
+    font-family: fantasy;
+}
