@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
+    position: sticky;
 }
  
 #circle {
@@ -19,6 +19,7 @@
     background-color: red;
     border-radius: 25px;
     margin-top: 75px;
+    transform: translate(0px, 0px);
 }
 
 #square {
@@ -45,13 +46,18 @@
     color: white;
     font-size: 10px;
     position: absolute;
-    margin-top: -16px;
+    margin-top: -30px;
 }
 
 #pSquare{
     color: white;
     font-size: 10px;
-    margin-top: 45px;
+    margin-top: 100px;
+}
+
+.hrLine{
+    margin-top: -26px;
+    background-color: #ce5a19;;
 }
 
 .buttonStyle {
@@ -60,17 +66,23 @@
     border: none;
     font-family: monospace;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.buttonSpeed {
+    color: rgb(254, 254, 254);
+    background-color: rgb(228, 8, 8);
+    border: none;
+    font-family: monospace;
+    font-size: 18px;
+    border-radius: 5px;
     padding: 3px;
 }
 
 .secline {
-    border: solid;
-    border-width: 1px;
-    padding: 1px;
-    border-radius: 5px;
+    padding: 21px;
     width: 450px;
-    border-color: #ce5a19;
     margin-top: 20px;
 }
 
@@ -79,27 +91,26 @@
     border-width: 1px;
     width: 200px;
     height: 200px;
-    border-radius: 100px;
     text-align: -webkit-center;
-    border-color: #ce5a19;
+    border-color: rgb(19,19,19);;
 }
 
 .circleInternal {
     border: solid;
-    width: 99px;
-    height: 98px;
-    border-radius: 50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
     text-align: -webkit-center;
     border-width: 1px;
     position: absolute;
-    margin: 50px 21px 21px 50px;
+    margin: 20px 21px 21px 20px;
     border-color: #ce5a19;
 }
 
 .LineSquare{
     border: solid;
-    width: 400px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     text-align: -webkit-center;
     position: absolute;
     margin: 25px 21px 21px 25px;

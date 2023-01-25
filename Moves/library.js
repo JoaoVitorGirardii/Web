@@ -1,6 +1,7 @@
 // var Line
 var ExecLine = false;
 var marPosLine = 0;
+var SpeedLine = 1;
 var voltaLine = false;
 // var circle
 var ExecCircle = false;
@@ -25,6 +26,10 @@ function startSquare() {ExecSquare = true}
 
 function stopSquare() {ExecSquare = false}
 
+function speedLineUp() {SpeedLine++}
+
+function speedLineDown() {SpeedLine--}
+
 setInterval(() => {
     //perform moviment block in a line
     if (ExecLine) { 
@@ -32,13 +37,13 @@ setInterval(() => {
         const coordinatesLine = document.getElementById('pLine')
 
         if (!voltaLine){
-            marPosLine ++;
+            marPosLine += SpeedLine;
         }else{
-            marPosLine--;
+            marPosLine-= SpeedLine;
         }
 
-        objLine.style.marginLeft =  marPosLine+"px";
-        coordinatesLine.innerHTML = 'X:'+Math.round(parseInt(marPosLine))+' Y:00';
+        objLine.style.transform = `translate(${marPosLine+'px'}, ${0})`;
+        coordinatesLine.innerHTML = 'X:'+Math.round(parseInt(marPosLine))+' Y:00 <br> SPEED: '+SpeedLine;
 
         //if bigger then i want go to the left
         if (marPosLine > 400){
@@ -81,23 +86,48 @@ setInterval(() => {
         const objSquare = document.getElementById('square');
         const coordinatesSquare = document.getElementById('pSquare');
 
-        if (XSquare < 400 && YSquare == 0){
-            XSquare += 1;
+        if(!VoltaSquare){
+            if (XSquare < 200 && YSquare == 0){
+                XSquare += 1;
+            }
+            
+            if (XSquare >= 200 && YSquare < 200){
+                YSquare += 1;
+            }
+            
+            if (YSquare == 200 && XSquare > 0){
+                XSquare -= 1;
+            }
+    
+            if (YSquare <= 200 && XSquare == 0){
+                YSquare -= 1;
+            }
+            
+            if (XSquare == 0 && YSquare == 1){
+                VoltaSquare = true;
+            }
+        }else{
+            if (XSquare == 0 && YSquare < 200){
+                YSquare += 1;
+            }
+
+            if (YSquare == 200 && XSquare < 200){
+                XSquare += 1;
+            }
+
+            if (XSquare == 200 && YSquare > 0){
+                YSquare -= 1;
+            }
+
+            if (YSquare == 0 && XSquare > 0){
+                XSquare -=1;
+            }
+
+            if(XSquare == 0 && YSquare == 0){
+                VoltaSquare = false;
+            }
         }
         
-        if (XSquare >= 400 && YSquare < 100){
-            YSquare += 1;
-        }
-        
-        if (YSquare == 100 && XSquare > 0){
-            XSquare -= 1;
-        }
-
-        if (YSquare <= 100 && XSquare == 0){
-            YSquare -= 1;
-        }
-
-
         objSquare.style.transform = `translate(${XSquare+'px'}, ${YSquare+'px'})`;
         coordinatesSquare.innerHTML = 'X:'+XSquare + ' Y:'+YSquare;
     }

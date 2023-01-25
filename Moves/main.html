@@ -10,12 +10,15 @@
 </head>
 <body>
     <section>
-        <button class="buttonStyle" onclick="startLine(true)">Start line</button>
-        <button class="buttonStyle" onclick="stopLine(false)">Stop line</button>
+        <button class="buttonStyle" onclick="startLine()">Start line</button>
+        <button class="buttonStyle" onclick="stopLine()">Stop line</button>
+        <button class="buttonSpeed" onclick="speedLineUp()">Speed + </button>
+        <button class="buttonSpeed" onclick="speedLineDown()">Speed - </button>
     </section>
     <section class="secline">
-        <p id="pLine">X:00 Y:00</p>
+        <p id="pLine">X:00 Y:00 <br>SPEED: 1</p>
         <div id="line"></div>
+        <hr class="hrLine">
     </section>
     
     <hr>
