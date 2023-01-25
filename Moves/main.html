@@ -14,28 +14,33 @@
         <button class="buttonStyle" onclick="stopLine(false)">Stop line</button>
     </section>
     <section class="secline">
-        <div id="line">0</div>
+        <p id="pLine">X:00 Y:00</p>
+        <div id="line"></div>
     </section>
     
     <hr>
 
     <section>
-        <button class="buttonStyle" onclick="startCircle(true)">Start circle</button>
-        <button class="buttonStyle" onclick="stopCircle(false)">Stop circle</button>
+        <button class="buttonStyle" onclick="startCircle()">Start circle</button>
+        <button class="buttonStyle" onclick="stopCircle()">Stop circle</button>
     </section>
     <section class="secCircle">
+        <p id="pCircle">X:00 Y:00</p>
         <div class="circleInternal"></div>
-        <div id="circle">X:0 Y:0</div>
+        <div id="circle"></div>
     </section>
 
     <hr>
 
     <section>
-        <button class="buttonStyle" onclick="startSquare(true)">Start square</button>
-        <button class="buttonStyle" onclick="stopSquare(false)">Stop esquare</button>
+        <button class="buttonStyle" onclick="startSquare()">Start square</button>
+        <button class="buttonStyle" onclick="stopSquare()">Stop esquare</button>
     </section>
     <section class="secSquare">
-        <div id="square">X:0 Y:0</div>
+        <div class="LineSquare">
+            <p id="pSquare">X:00 Y:00</p>
+        </div>
+        <div id="square"></div>
     </section>
 
     <script src="library.js"></script>

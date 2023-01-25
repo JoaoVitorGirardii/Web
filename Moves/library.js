@@ -6,23 +6,30 @@ var voltaLine = false;
 var ExecCircle = false;
 var Control = 0;
 var voltaCircle = false;
-let angle = 0;
+var angle = 0;
 //var square
 var ExecSquare = false;
+var VoltaSquare = false;
+var XSquare = 0;
+var YSquare = 0;
 
+function startLine() {ExecLine = true}
 
-function startLine(vlr){ExecLine = vlr}
+function stopLine() {ExecLine = false}
 
-function stopLine(vlr) {ExecLine = vlr}
+function startCircle() {ExecCircle = true}
 
-function startCircle(vlr){ExecCircle = vlr}
+function stopCircle() {ExecCircle = false}
 
-function stopCircle(vlr) {ExecCircle = vlr}
+function startSquare() {ExecSquare = true}
+
+function stopSquare() {ExecSquare = false}
 
 setInterval(() => {
     //perform moviment block in a line
     if (ExecLine) { 
-        const obj = document.getElementById('line');
+        const objLine = document.getElementById('line');
+        const coordinatesLine = document.getElementById('pLine')
 
         if (!voltaLine){
             marPosLine ++;
@@ -30,8 +37,8 @@ setInterval(() => {
             marPosLine--;
         }
 
-        obj.style.marginLeft =  marPosLine+"px";
-        obj.innerHTML = marPosLine;
+        objLine.style.marginLeft =  marPosLine+"px";
+        coordinatesLine.innerHTML = 'X:'+Math.round(parseInt(marPosLine))+' Y:00';
 
         //if bigger then i want go to the left
         if (marPosLine > 400){
@@ -46,8 +53,8 @@ setInterval(() => {
 
     //perform moviment in a circle
     if (ExecCircle){
-        const obj = document.getElementById('circle');
-
+        const objCircle = document.getElementById('circle');
+        const coordinatesCircle = document.getElementById('pCircle')
         if (voltaCircle){
             angle -= 0.01;
         }else{
@@ -57,8 +64,8 @@ setInterval(() => {
         const x = Math.cos(angle) * 75 + 'px';
         const y = Math.sin(angle) * 75 + 'px';
 
-        obj.style.transform = `translate(${x}, ${y})`;
-        obj.innerHTML = 'X:'+Math.round(parseInt(x))+' Y:'+Math.round(parseInt(y));
+        objCircle.style.transform = `translate(${x}, ${y})`;
+        coordinatesCircle.innerHTML = 'X:'+Math.round(parseInt(x))+' Y:'+Math.round(parseInt(y));
     
         //condition to return
         if( Control > 635){
@@ -68,6 +75,33 @@ setInterval(() => {
         //circle rotor control
         Control ++;
     }
+
+    //perform moviment in a square
+    if (ExecSquare){
+        const objSquare = document.getElementById('square');
+        const coordinatesSquare = document.getElementById('pSquare');
+
+        if (XSquare < 400 && YSquare == 0){
+            XSquare += 1;
+        }
+        
+        if (XSquare >= 400 && YSquare < 100){
+            YSquare += 1;
+        }
+        
+        if (YSquare == 100 && XSquare > 0){
+            XSquare -= 1;
+        }
+
+        if (YSquare <= 100 && XSquare == 0){
+            YSquare -= 1;
+        }
+
+
+        objSquare.style.transform = `translate(${XSquare+'px'}, ${YSquare+'px'})`;
+        coordinatesSquare.innerHTML = 'X:'+XSquare + ' Y:'+YSquare;
+    }
+
 }, 10);
 
 
