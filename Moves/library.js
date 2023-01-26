@@ -38,9 +38,15 @@ function speedCircleUp() {SpeedCircle += 0.01}
 
 function speedCircleDown() {SpeedCircle -= 0.01}
 
-function SpeedSquareUp() {SpeedSquare++}
+function SpeedSquareUp() {
+    // SpeedSquare++
+    alert('speed buttons is a broken, sorry')
+}
 
-function SpeedSquareDown() {SpeedSquare--}
+function SpeedSquareDown() {
+    // SpeedSquare--
+    alert('speed buttons is a broken, sorry')
+}
 
 function CirculoRetorna() {
     CirculoEmUmSentido = !CirculoEmUmSentido;
