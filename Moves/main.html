@@ -10,13 +10,20 @@
 </head>
 <body>
     <section>
+        
         <button class="buttonStyle" onclick="startLine()">Start line</button>
         <button class="buttonStyle" onclick="stopLine()">Stop line</button>
-        <button class="buttonSpeed" onclick="speedLineUp()">Speed + </button>
-        <button class="buttonSpeed" onclick="speedLineDown()">Speed - </button>
+       
+        <div class="BoxSpeed">
+            <div>
+                <h3>Speed</h3>
+                <button class="buttonSpeed" onclick="speedLineUp()"> + </button>
+                <button class="buttonSpeed" onclick="speedLineDown()"> - </button>    
+            </div>
+            <p id="pLine">X:00 Y:00 <br>SPEED: 1</p>
+        </div>
     </section>
     <section class="secline">
-        <p id="pLine">X:00 Y:00 <br>SPEED: 1</p>
         <div id="line"></div>
         <hr class="hrLine">
     </section>
@@ -26,9 +33,17 @@
     <section>
         <button class="buttonStyle" onclick="startCircle()">Start circle</button>
         <button class="buttonStyle" onclick="stopCircle()">Stop circle</button>
+        <button id="BtnRotacao" class="buttonStyle" onclick="CirculoRetorna()">Vai e volta</button>    
+        <div class="BoxSpeed">
+            <div>
+                <h3>Speed</h3>
+                <button class="buttonSpeed" onclick="speedCircleUp()"> + </button>
+                <button class="buttonSpeed" onclick="speedCircleDown()"> - </button>
+            </div>
+            <p id="pCircle">X:00 Y:00 <br>SPEED: 0.01</p>
+        </div>
     </section>
     <section class="secCircle">
-        <p id="pCircle">X:00 Y:00</p>
         <div class="circleInternal"></div>
         <div id="circle"></div>
     </section>
@@ -38,11 +53,17 @@
     <section>
         <button class="buttonStyle" onclick="startSquare()">Start square</button>
         <button class="buttonStyle" onclick="stopSquare()">Stop esquare</button>
+        <div class="BoxSpeed">
+            <div>
+                <h3>Speed</h3>
+                <button class="buttonSpeed" onclick="SpeedSquareUp()"> + </button>
+                <button class="buttonSpeed" onclick="SpeedSquareDown()"> - </button>
+            </div>
+            <p id="pSquare">X:00 Y:00 <br>SPEED: 0.01</p>
+        </div>
     </section>
     <section class="secSquare">
-        <div class="LineSquare">
-            <p id="pSquare">X:00 Y:00</p>
-        </div>
+        <div class="LineSquare"></div>
         <div id="square"></div>
     </section>
 

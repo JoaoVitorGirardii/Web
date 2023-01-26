@@ -7,10 +7,14 @@ var voltaLine = false;
 var ExecCircle = false;
 var Control = 0;
 var voltaCircle = false;
+var CirculoEmUmSentido = false;
+var SpeedCircle = 0.01;
 var angle = 0;
 //var square
 var ExecSquare = false;
 var VoltaSquare = false;
+var SpeedSquare = 1;
+var QuadradoEmUmSentido = false;
 var XSquare = 0;
 var YSquare = 0;
 
@@ -29,6 +33,24 @@ function stopSquare() {ExecSquare = false}
 function speedLineUp() {SpeedLine++}
 
 function speedLineDown() {SpeedLine--}
+
+function speedCircleUp() {SpeedCircle += 0.01}
+
+function speedCircleDown() {SpeedCircle -= 0.01}
+
+function SpeedSquareUp() {SpeedSquare++}
+
+function SpeedSquareDown() {SpeedSquare--}
+
+function CirculoRetorna() {
+    CirculoEmUmSentido = !CirculoEmUmSentido;
+    const BtnRotacao = document.getElementById('BtnRotacao')
+    if (CirculoEmUmSentido){
+        BtnRotacao.innerHTML = 'Sentido ÚNICO'
+    }else{
+        BtnRotacao.innerHTML = 'DUPLO Sentido'
+    }
+}
 
 setInterval(() => {
     //perform moviment block in a line
@@ -61,16 +83,16 @@ setInterval(() => {
         const objCircle = document.getElementById('circle');
         const coordinatesCircle = document.getElementById('pCircle')
         if (voltaCircle){
-            angle -= 0.01;
+            angle -= SpeedCircle;
         }else{
-            angle += 0.01;
+            angle += SpeedCircle;
         };
 
         const x = Math.cos(angle) * 75 + 'px';
         const y = Math.sin(angle) * 75 + 'px';
 
         objCircle.style.transform = `translate(${x}, ${y})`;
-        coordinatesCircle.innerHTML = 'X:'+Math.round(parseInt(x))+' Y:'+Math.round(parseInt(y));
+        coordinatesCircle.innerHTML = 'X:'+Math.round(parseInt(x))+' Y:'+Math.round(parseInt(y))+  '<br> SPEED: '+SpeedCircle;
     
         //condition to return
         if( Control > 635){
@@ -78,7 +100,9 @@ setInterval(() => {
             Control = 0;
         }
         //circle rotor control
-        Control ++;
+        if (!CirculoEmUmSentido){
+            Control ++;
+        }
     }
 
     //perform moviment in a square
@@ -87,52 +111,28 @@ setInterval(() => {
         const coordinatesSquare = document.getElementById('pSquare');
 
         if(!VoltaSquare){
-            if (XSquare < 200 && YSquare == 0){
-                XSquare += 1;
-            }
-            
-            if (XSquare >= 200 && YSquare < 200){
-                YSquare += 1;
-            }
-            
-            if (YSquare == 200 && XSquare > 0){
-                XSquare -= 1;
-            }
-    
-            if (YSquare <= 200 && XSquare == 0){
-                YSquare -= 1;
-            }
-            
-            if (XSquare == 0 && YSquare == 1){
-                VoltaSquare = true;
-            }
+
+            if (XSquare < 200 && YSquare == 0){XSquare += SpeedSquare}
+            if (XSquare >= 200 && YSquare < 200){YSquare += SpeedSquare}
+            if (YSquare == 200 && XSquare > 0){XSquare -= SpeedSquare}
+            if (YSquare <= 200 && XSquare == 0){YSquare -= SpeedSquare}
+            if (XSquare == 0 && YSquare == 1){VoltaSquare = true}
+
         }else{
-            if (XSquare == 0 && YSquare < 200){
-                YSquare += 1;
-            }
 
-            if (YSquare == 200 && XSquare < 200){
-                XSquare += 1;
-            }
+            if (XSquare == 0 && YSquare < 200){YSquare += SpeedSquare}
+            if (YSquare == 200 && XSquare < 200){XSquare += SpeedSquare}
+            if (XSquare == 200 && YSquare > 0){YSquare -= SpeedSquare}
+            if (YSquare == 0 && XSquare > 0){XSquare -= SpeedSquare}
+            if(XSquare == 0 && YSquare == 0){VoltaSquare = false}
 
-            if (XSquare == 200 && YSquare > 0){
-                YSquare -= 1;
-            }
-
-            if (YSquare == 0 && XSquare > 0){
-                XSquare -=1;
-            }
-
-            if(XSquare == 0 && YSquare == 0){
-                VoltaSquare = false;
-            }
         }
         
         objSquare.style.transform = `translate(${XSquare+'px'}, ${YSquare+'px'})`;
         coordinatesSquare.innerHTML = 'X:'+XSquare + ' Y:'+YSquare;
     }
 
-}, 10);
+}, 1);
 
 
 
