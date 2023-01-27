@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Vamos fazer um lanche e vc paga??</h1>
-    <div class="nomovediv" onclick="sim()">SIM</div>
-    <div class="pMove" id="canvas" onmouseenter="touch()" onmousemove="move()">NÃO</div>
-    
+    <div class="Title">
+        <h2>Click <b>NO</b> if you can</h2>
+    </div>
+    <div class="boxbutton">
+        <button style="border-color: yellow;" onclick="desistiu()">Yes</button>
+        <button id="btnNO" onclick="clicou()" onmouseenter="moveBtn()" onmousemove="moveBtn()">No</button>
+    </div>
     <script src="libray.js"></script>
 </body>
-</html>
+</html> 

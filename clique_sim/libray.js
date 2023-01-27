@@ -1,23 +1,28 @@
-function touch(){
-    var canvas = document.getElementById('canvas');
-    var newPosTop =  Math.round((Math.random() * 110)).toString(5);
-    var newPosLeft =  Math.round((Math.random() * 110)).toString(5);
-    //prompt(newPos);
-    //canvas.style.marginLeft = newPos;
-    canvas.style = "margin-left:"+newPosLeft+"px; margin-top:"+newPosTop+"px";
-    canvas.style.color = 'red';
+function moveBtn() {
+    const btn = document.getElementById("btnNO")
+    var largura = window.screen.width;
+
+    var tamanhoOK = false;
+    while (!tamanhoOK) {
+        var x = Math.random() * 250;
+        var y = Math.random() * 250;
+
+        if (largura > y){
+            tamanhoOK = true;
+        }
+       
+    }
+    
+
+    btn.style.transform = `translate(${x+'px'},${y+'px'})`;
 }
 
-function move(){
-    var canvas = document.getElementById('canvas');
-    var newPosTop =  Math.round((Math.random() * 110)).toString(5);
-    var newPosLeft =  Math.round((Math.random() * 110)).toString(5);
-    //prompt(newPos);
-    //canvas.style.marginLeft = newPos;
-    canvas.style = "margin-left:"+newPosLeft+"px; margin-top:"+newPosTop+"px";
-    canvas.style.color = 'red';
+function clicou() {
+    alert("congratulations")
 }
 
-function sim(){
-    alert('EEEBA VC PAGA TE AMO');
+function desistiu() {
+    if(confirm("are you going to give up?")){
+        window.close();
+    }
 }

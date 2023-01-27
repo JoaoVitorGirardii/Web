@@ -1,28 +1,41 @@
-.pMove{
-    font-family: fantasy;
-    font-size: 60px;
-    width: 150px;
-    height: 150px;
-    margin-left: 750px;
-    color: red;
+body{
+    background-color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
 }
-
-h1{
-    font-size: 80px;
-    margin: 0px;
-    font-family: fantasy;
-    color: rgb(13, 156, 245);
-}
-
-.nomovediv{
-    position: fixed;
-    font-family: fantasy;
-    font-size: 60px;
-    width: 110px;
+b{
+    font-size: 30px;
     color: green;
-    margin-left: 250px;
 }
 
-div{
-    display: inline-block;
+.Title{
+    text-align: center;
+    color: white;
+    border: solid;
+    border-width: 2px;
+    border-color: red;
+    border-radius: 5px;
+    height: 10vh;
+}
+
+.boxbutton{
+    text-align: center;
+    /* border: solid;
+    border-width: 2px;
+    border-color: red;
+    border-radius: 5px; */
+    margin-top: 5px;
+    height: 80vh;  
+}
+
+button{
+    border: solid;
+    border-color: chartreuse;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: inherit;
+    padding: 5px;
+    font-size: 20px;
+    color: whitesmoke;
+    width: 5em;
+    margin: 1em;
 }
