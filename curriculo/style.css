@@ -54,13 +54,33 @@
     font-size: 14px;
 }
 
-.progress-bar{
-    height: 1px !important;
-    position: absolute;
-    box-shadow: 0 0 05px rgb(0, 174, 255),
-                0 0 20px rgb(0, 174, 255)
+.conhecimento div{
+    height: 2px;
+    background-color: #daa520;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #daa520,
+                0 0 10px #daa520,
+                0 0 15px #daa520;
 }
 
-.progress{
-    height: 1px !important;
+h5{
+    letter-spacing: 10px;
+    font-family: sans-serif;
+    font-size: 1rem  !important;
+}
+
+.nomePerfil{
+    display: grid;
+    align-items: end;
+    height: 11em;
+}
+
+.nomePerfil h4{
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+.Resumo{
+    background-color: red;
 }
