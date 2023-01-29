@@ -10,7 +10,6 @@ function moveBtn() {
         if (largura > y){
             tamanhoOK = true;
         }
-       
     }
     
 
