@@ -7,6 +7,7 @@
     text-align: center;
     background-color: rgb(142, 1, 1);
     padding-top: 5em;
+    border-bottom-right-radius: 5px;
 }
 
 .titulosH4{
@@ -59,16 +60,20 @@
     background-color: #daa520;
     margin: 0 0 10px 0;
     border-radius: 2px;
-    box-shadow: 0 0 5px #daa520,
-                0 0 10px #daa520,
+    box-shadow: 0 0 2px #daa520,
                 0 0 15px #daa520;
 }
-
-h5{
+.conhecimento h5 {
     letter-spacing: 10px;
     font-family: sans-serif;
     font-size: 1rem  !important;
 }
+
+.baseconhecimento{
+    width: 100%; 
+    background-color: rgb(160, 160, 160) !important; 
+    box-shadow: none !important;
+} 
 
 .nomePerfil{
     display: grid;
@@ -82,5 +87,23 @@ h5{
 }
 
 .Resumo{
-    background-color: red;
+    background-color: #464646;
+    border-radius: 5px;
+}
+
+.Resumo:hover{
+    box-shadow: inset 0px 0px 5px 3px #f9fafb14;
+}
+
+.list-group-item{
+    background-color: inherit !important;
+    border:none !important;
+}
+
+.lista{
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
 }
