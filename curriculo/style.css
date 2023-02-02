@@ -55,25 +55,28 @@
     font-size: 14px;
 }
 
-.conhecimento div{
-    height: 2px;
-    background-color: #daa520;
-    margin: 0 0 10px 0;
-    border-radius: 2px;
-    box-shadow: 0 0 2px #daa520,
-                0 0 15px #daa520;
-}
-.conhecimento h5 {
-    letter-spacing: 10px;
-    font-family: sans-serif;
-    font-size: 1rem  !important;
-}
-
 .baseconhecimento{
+    height: 2px;
     width: 100%; 
-    background-color: rgb(160, 160, 160) !important; 
+    background-color: rgb(100, 100, 100) !important; 
     box-shadow: none !important;
 } 
+
+.conhecimento .baseconhecimento div{
+    height: 2px;
+    background-color: #03e9f4;
+    margin: 0 0 10px 0;
+    display: inline-block;
+}
+
+.conhecimento h5 {
+    letter-spacing: 7px;
+    font-family: sans-serif;
+    font-size: 1rem  !important;
+    display: inline-block;
+    margin-top: 24px;
+    margin-bottom: 5px;
+}
 
 .nomePerfil{
     display: grid;
@@ -107,3 +110,62 @@
     color: #ffffff;
     text-decoration: none;
 }
+
+
+/* tooltips */
+
+.tool-tip {
+    display: inline-block;
+    position: relative;
+  }
+  .tool-tip .tool-tip__icon {
+    background: #2f618d;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: italic;
+    font-family: times new roman;
+    height: 17px;
+    line-height: 16px;
+    text-align: center;
+    width: 17px;
+  }
+  .tool-tip .tool-tip__info {
+    display: none;
+    background: #262626;
+    border: 1px solid #27b1f0;
+    border-radius: 3px;
+    font-size: 0.875em;
+    padding: 1em;
+    position: absolute;
+    left: 30px;
+    top: -20px;
+    width: 250px;
+    z-index: 2;
+  }
+  .tool-tip .tool-tip__info:before, .tool-tip .tool-tip__info:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 7px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #27b1f0;
+  }
+  .tool-tip .tool-tip__info:after {
+    left: -8px;
+    border-right-color: #262626;
+  }
+  .tool-tip .tool-tip__info .info {
+    display: block;
+  }
+  .tool-tip .tool-tip__info .info__title {
+    color: #fa00f3;
+  }
+  .tool-tip:hover .tool-tip__info, .tool-tip:focus .tool-tip__info {
+    display: inline-block;
+  }
+  
+  h5:focus + .tool-tip .tool-tip__info {
+    display: inline-block;
+  }
